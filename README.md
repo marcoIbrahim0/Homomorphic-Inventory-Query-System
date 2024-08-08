@@ -1,46 +1,52 @@
-The Homomorphic Inventory Query System (HIQS) is a proof-of-concept project that demonstrates the use of homomorphic encryption to perform secure and privacy-preserving queries on an inventory database. Utilizing the TFHE (Fast Fully Homomorphic Encryption over the Torus) library, this project allows users to query encrypted data without the need to decrypt it, ensuring that sensitive information remains secure.
+# Homomorphic Inventory Query System (HIQS)
 
-Features
+The **Homomorphic Inventory Query System (HIQS)** is a proof-of-concept project that demonstrates the use of homomorphic encryption to perform secure and privacy-preserving queries on an inventory database. Utilizing the TFHE (Fast Fully Homomorphic Encryption over the Torus) library, this project allows users to query encrypted data without the need to decrypt it, ensuring that sensitive information remains secure.
 
-Homomorphic Encryption: Leverages the TFHE library to perform computations on encrypted data.
-Secure Queries: Allows querying of inventory data without exposing the underlying plaintext.
-Privacy-Preserving: Ensures that both the query and the data remain confidential throughout the process.
-Integer and Boolean Operations: Supports encrypted operations on integers and booleans using TFHE.
-Installation
+## Features
+
+- **Homomorphic Encryption**: Leverages the TFHE library to perform computations on encrypted data.
+- **Secure Queries**: Allows querying of inventory data without exposing the underlying plaintext.
+- **Privacy-Preserving**: Ensures that both the query and the data remain confidential throughout the process.
+- **Integer and Boolean Operations**: Supports encrypted operations on integers and booleans using TFHE.
+
+## Installation
+
 To get started with the Homomorphic Inventory Query System, follow these steps:
 
-Clone the Repository:
+1. **Clone the Repository**:
+    ```sh
+    git clone https://github.com/your-username/HomomorphicInventoryQuerySystem.git
+    cd HomomorphicInventoryQuerySystem
+    ```
 
+2. **Install Dependencies**:
+    Ensure you have Rust installed. Then, add the required dependencies to your `Cargo.toml`:
+    ```toml
+    [dependencies]
+    tfhe = "0.1"  # Replace with the actual version you're using
+    ```
 
-git clone https://github.com/your-username/HomomorphicInventoryQuerySystem.git
+3. **Build the Project**:
+    ```sh
+    cargo build
+    ```
 
-cd HomomorphicInventoryQuerySystem
+## Usage
 
-Install Dependencies:
+1. **Generate Keys and Set Server Key**:
+    The main function demonstrates how to generate keys and set the server key.
 
-Ensure you have Rust installed. Then, add the required dependencies to your Cargo.toml:
+2. **Define Inventory and Query**:
+    You can define an example inventory and perform a query as shown in the main function.
 
+3. **Run the Project**:
+    ```sh
+    cargo run
+    ```
 
-toml
-[dependencies]
-tfhe = "0.1"  # Replace with the actual version you're using
-Build the Project:
+## Example Code
 
-
-cargo build
-Usage
-Generate Keys and Set Server Key:
-The main function demonstrates how to generate keys and set the server key.
-
-Define Inventory and Query:
-You can define an example inventory and perform a query as shown in the main function.
-
-Run the Project:
-
-cargo run
-
-Example Code
-
+```rust
 use tfhe::*;
 use tfhe::prelude::*;
 use tfhe::{generate_keys, set_server_key, ConfigBuilder, FheUint32, FheUint8, FheInt32, FheInt8};
