@@ -44,7 +44,7 @@ To get started with the Homomorphic Inventory Query System, follow these steps:
     cargo run
     ```
 
-## Example Code
+## Code
 
 ```rust
 use tfhe::*;
